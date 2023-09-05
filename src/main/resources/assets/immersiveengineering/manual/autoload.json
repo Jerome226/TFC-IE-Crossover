@@ -3,8 +3,6 @@
   "tfc_ie_addon:tfc_ie_changes": {
     "category_weight": 8,
     "entry_list": [
-      "tfc_ie_addon:tfc_ie_ores",
-      "tfc_ie_addon:tfc_ie_alloys",
       "tfc_ie_addon:tfc_ie_chemicals",
       "tfc_ie_addon:tfc_ie_multiblocks",
       "tfc_ie_addon:tfc_ie_blueprint",
