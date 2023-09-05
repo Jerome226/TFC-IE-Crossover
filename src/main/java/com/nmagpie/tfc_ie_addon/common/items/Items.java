@@ -6,7 +6,6 @@ import java.util.function.Supplier;
 import blusunrize.immersiveengineering.ImmersiveEngineering;
 import com.nmagpie.tfc_ie_addon.TFC_IE_Addon;
 import com.nmagpie.tfc_ie_addon.common.blocks.Fluids;
-import com.nmagpie.tfc_ie_addon.common.util.Metal;
 import net.minecraft.world.item.BucketItem;
 import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.Item;
@@ -39,18 +38,6 @@ public class Items
     public static final RegistryObject<Drillhead> DRILLHEAD_RED_STEEL = register("drillhead_red_steel", () -> new Drillhead(Drillhead.RED_STEEL));
 
     public static final RegistryObject<Item> TREATED_WOOD_LUMBER = register("treated_wood_lumber", TFCItemGroup.WOOD);
-
-    public static final Map<Ore.Grade, RegistryObject<Item>> ALUMINUM_ORES = Helpers.mapOfKeys(Ore.Grade.class, grade -> register("ore/" + grade.name() + "_aluminum", TFCItemGroup.ORES));
-    public static final Map<Ore.Grade, RegistryObject<Item>> LEAD_ORES = Helpers.mapOfKeys(Ore.Grade.class, grade -> register("ore/" + grade.name() + "_lead", TFCItemGroup.ORES));
-    public static final Map<Ore.Grade, RegistryObject<Item>> URANIUM_ORES = Helpers.mapOfKeys(Ore.Grade.class, grade -> register("ore/" + grade.name() + "_uranium", TFCItemGroup.ORES));
-    public static final Map<Metal, Map<Metal.ItemType, RegistryObject<Item>>> METAL_ITEMS = Helpers.mapOfKeys(Metal.class, metal ->
-        Helpers.mapOfKeys(Metal.ItemType.class, type ->
-            register("metal/" + type.name() + "/" + metal.name(), () -> type.create(metal))
-        )
-    );
-    public static final Map<Metal, RegistryObject<BucketItem>> METAL_FLUID_BUCKETS = Helpers.mapOfKeys(Metal.class, metal ->
-        register("bucket/metal/" + metal.name(), () -> new BucketItem(Fluids.METALS.get(metal).source(), new Item.Properties().craftRemainder(net.minecraft.world.item.Items.BUCKET).stacksTo(1).tab(TFCItemGroup.MISC)))
-    );
 
     private static RegistryObject<Item> register(String name, CreativeModeTab group)
     {

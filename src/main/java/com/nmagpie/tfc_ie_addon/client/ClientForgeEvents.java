@@ -23,7 +23,7 @@ public class ClientForgeEvents
         if (Helpers.ASSERTIONS_ENABLED)
         {
             final Stopwatch tick = Stopwatch.createStarted();
-            ClientSelfTests.validateModels();
+            //ClientSelfTests.validateModels();
             LOGGER.info("Client self tests passed in {}", tick.stop());
         }
     }

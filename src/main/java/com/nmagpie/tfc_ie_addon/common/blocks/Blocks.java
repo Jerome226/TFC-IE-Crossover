@@ -6,7 +6,6 @@ import java.util.function.Supplier;
 import java.util.function.ToIntFunction;
 import com.nmagpie.tfc_ie_addon.TFC_IE_Addon;
 import com.nmagpie.tfc_ie_addon.common.items.Items;
-import com.nmagpie.tfc_ie_addon.common.util.Metal;
 import javax.annotation.Nullable;
 import net.minecraft.core.BlockPos;
 import net.minecraft.world.entity.EntityType;
@@ -49,34 +48,6 @@ public class Blocks
     public static final RegistryObject<AmethystClusterBlock> LARGE_QUARTZ_BUD = register("mineral/large_quartz_bud", () -> new AmethystClusterBlock(5, 3, BlockBehaviour.Properties.copy(QUARTZ_CLUSTER.get()).sound(SoundType.GLASS).lightLevel(light -> 4)), ROCK_STUFFS);
     public static final RegistryObject<AmethystClusterBlock> MEDIUM_QUARTZ_BUD = register("mineral/medium_quartz_bud", () -> new AmethystClusterBlock(4, 3, BlockBehaviour.Properties.copy(QUARTZ_CLUSTER.get()).sound(SoundType.GLASS).lightLevel(light -> 2)), ROCK_STUFFS);
     public static final RegistryObject<AmethystClusterBlock> SMALL_QUARTZ_BUD = register("mineral/small_quartz_bud", () -> new AmethystClusterBlock(3, 4, BlockBehaviour.Properties.copy(QUARTZ_CLUSTER.get()).sound(SoundType.GLASS).lightLevel(light -> 1)), ROCK_STUFFS);
-
-    public static final RegistryObject<Block> SMALL_ALUMINUM = register("ore/small_aluminum", () -> GroundcoverBlock.looseOre(Properties.of(Material.GRASS).strength(0.05F, 0.0F).sound(SoundType.NETHER_ORE).noCollission()), ORES);
-
-    public static final Map<Rock, Map<Ore.Grade, RegistryObject<Block>>> ALUMINUM_ORES = Helpers.mapOfKeys(Rock.class, rock ->
-        Helpers.mapOfKeys(Ore.Grade.class, grade ->
-            register(("ore/" + grade.name() + "_aluminum" + "/" + rock.name()), () -> new Block(Properties.of(Material.STONE).sound(SoundType.STONE).strength(3, 10).requiresCorrectToolForDrops()), TFCItemGroup.ORES)
-        )
-    );
-
-    public static final RegistryObject<Block> SMALL_LEAD = register("ore/small_lead", () -> GroundcoverBlock.looseOre(Properties.of(Material.GRASS).strength(0.05F, 0.0F).sound(SoundType.NETHER_ORE).noCollission()), ORES);
-
-    public static final Map<Rock, Map<Ore.Grade, RegistryObject<Block>>> LEAD_ORES = Helpers.mapOfKeys(Rock.class, rock ->
-        Helpers.mapOfKeys(Ore.Grade.class, grade ->
-            register(("ore/" + grade.name() + "_lead" + "/" + rock.name()), () -> new Block(Properties.of(Material.STONE).sound(SoundType.STONE).strength(3, 10).requiresCorrectToolForDrops()), TFCItemGroup.ORES)
-        )
-    );
-
-    public static final RegistryObject<Block> SMALL_URANIUM = register("ore/small_uranium", () -> GroundcoverBlock.looseOre(Properties.of(Material.GRASS).strength(0.05F, 0.0F).sound(SoundType.NETHER_ORE).noCollission()), ORES);
-
-    public static final Map<Rock, Map<Ore.Grade, RegistryObject<Block>>> URANIUM_ORES = Helpers.mapOfKeys(Rock.class, rock ->
-        Helpers.mapOfKeys(Ore.Grade.class, grade ->
-            register(("ore/" + grade.name() + "_uranium" + "/" + rock.name()), () -> new Block(Properties.of(Material.STONE).sound(SoundType.STONE).strength(3, 10).requiresCorrectToolForDrops()), TFCItemGroup.ORES)
-        )
-    );
-
-    public static final Map<Metal, RegistryObject<LiquidBlock>> METAL_FLUIDS = Helpers.mapOfKeys(Metal.class, metal ->
-        register("fluid/metal/" + metal.name(), () -> new LiquidBlock(Fluids.METALS.get(metal).source(), Properties.of(TFCMaterials.MOLTEN_METAL).noCollission().strength(100f).noDrops()))
-    );
 
     public static int lightEmission(BlockState state)
     {
